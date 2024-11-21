@@ -1,0 +1,22 @@
+name: instructlab
+channels:
+  - conda-forge
+  - defaults
+  - rocm
+dependencies:
+  - python=3.11
+  - rocm-hip=6.2.4
+  - rocm-hipblas=2.2.0
+  - rocm-opencl-runtime=6.2.4
+  - clang=16
+  - clangxx=16
+  - pip
+  - pip:
+    - instructlab[rocm]==0.21.0
+    - --extra-index-url https://download.pytorch.org/whl/rocm6.2
+variables:
+  ROCM_PATH: /opt/rocm
+  HIP_PLATFORM: amd
+  CMAKE_PREFIX_PATH: /opt/rocm
+  CMAKE_C_COMPILER: /opt/rocm/llvm/bin/clang
+  CMAKE_CXX_COMPILER: /opt/rocm/llvm/bin/clang++
