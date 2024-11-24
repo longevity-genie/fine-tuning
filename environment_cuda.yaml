@@ -1,17 +1,19 @@
 name: instructlab
 channels:
   - conda-forge
+  - pytorch
   - nvidia
   - defaults
 dependencies:
   - python=3.11
-  - pytorch-gpu=2.4.0
-  - cuda-toolkit=12
-  - cuda-nvcc=12
+  - pytorch
+  - pytorch-cuda>=12,<13
+  - cuda-toolkit>=12,<13
+  - cuda-nvcc>=12,<13
   - pip
   - pip:
     - instructlab[cuda]==0.21.0
-    - vllm==0.6.2
+    - vllm>=0.6.2
 variables:
   CMAKE_ARGS: "-DLLAMA_CUDA=on -DLLAMA_NATIVE=off"
   FORCE_CMAKE: 1

@@ -163,3 +163,8 @@ cython_debug/
 
 .micromamba
 .miniconda
+.conda
+.mamba
+
+models/
+taxonomy/
