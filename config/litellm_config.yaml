@@ -1,0 +1,16 @@
+model_list:
+  - model_name: granite
+    litellm_params:
+      model: openai/granite-3.0-8b-instruct #/granite-7b-lab.Q4_K_M.gguf
+      api_base: "http://localhost:8000/v1"
+      model_path: "models/granite-7b-lab.Q4_K_M.gguf"
+      context_window: 2048
+      max_tokens: 512
+      temperature: 0.7
+
+server:
+  host: 0.0.0.0
+  port: 8080
+
+environment_variables:
+  OPENAI_API_KEY: "EMPTY"
